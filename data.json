@@ -1,0 +1,91 @@
+{
+    "sandwiches" :[
+        {
+            "name" : "Egg, Pesto & Mozzarella Sandwich",
+            "calories" : "390 calories",
+            "photo" : "https://globalassets.starbucks.com/digitalassets/products/food/EggPestoMozzarellaSandwich.jpg?impolicy=1by1_tight_288"
+        },
+        {
+            "name": "Bacon, Gouda & Egg Sandwich",
+            "calories": "360 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20210915_BaconGoudaEggSandwich.jpg?impolicy=1by1_tight_288"
+        },
+        {
+            "name": "Double-Smoked Bacon, Cheddar & Egg Sandwich",
+            "calories": "500 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20210915_BaconCheddarEggSandwich.jpg?impolicy=1by1_tight_288"
+        },
+        {
+            "name": "Sausage, Cheddar & Egg Sandwich",
+            "calories": "480 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SausageCheddarEggSandwich.jpg?impolicy=1by1_tight_288"
+        },
+        {
+            "name": "Turkey Bacon, Cheddar & Egg White Sandwich",
+            "calories": "230 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/TurkeyBaconCheddarEggWhiteSandwich.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Impossible™ Breakfast Sandwich",
+            "calories": "420 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/TurkeyBaconCheddarEggWhiteSandwich.jpg?impolicy=1by1_medium_630"
+        }
+    ],
+    "wraps":[
+        {
+            "name": "Bacon, Sausage & Egg Wrap",
+            "calories": "640 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20191018_BaconSausageCageFreeEggWrap.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Spinach, Feta & Egg White Wrap",
+            "calories": "290 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SpinachFetaEggWhiteWrap.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Avocado Spread",
+            "calories": "90 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20190814_AvocadoSpread.jpg?impolicy=1by1_medium_630"
+        }
+    ],
+
+    "eggs": [
+        {
+            "name": "Bacon & Gruyère Egg Bites",
+            "calories": "300 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/BaconGruyereEggBites.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Egg White & Roasted Red Pepper Egg Bites",
+            "calories": "170 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/EggWhiteRoastedRedPepperEggBites.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Kale & Mushroom Egg Bites",
+            "calories": "230 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/KalePortabellaMushroomEggBites.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Potato, Cheddar & Chive Bakes",
+            "calories": "210 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/BaconGruyereEggBites.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Avocado Spread",
+            "calories": "90 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20190814_AvocadoSpread.jpg?impolicy=1by1_medium_630"
+        }
+   ],
+   "yogurt": [
+    {
+            "name": "Rolled & Steel-Cut Oatmeal",
+            "calories": "160 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/SBX20190422_29929-ClassicOatmeal.jpg?impolicy=1by1_medium_630"
+        },
+        {
+            "name": "Berry Trio Parfait",
+            "calories": "240 calories",
+            "photo": "https://globalassets.starbucks.com/digitalassets/products/food/BerryTrioParfait.jpg?impolicy=1by1_medium_630"
+        }
+   ]
+}

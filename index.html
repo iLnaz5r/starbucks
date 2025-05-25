@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            justify-content: space-between;
+            background-color: white;
+        }
+        .header-left{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .header-left h6,.location, button, .breakfast-text, .wraps-text, .egg-text, .yogurt-text{
+            opacity: 90%;
+            cursor: pointer;
+        }
+         .breakfast:hover, .wraps-text:hover, .egg-text:hover, .yogurt-text:hover{
+            color: black;
+         }
+        button:hover{
+            cursor: pointer;
+            opacity: 60%;
+        }
+        .header-left h6:hover, .location:hover{
+            color: green;
+            cursor: pointer;
+        }
+        .header-right{
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .location h5{
+            margin: 0;
+            line-height: 1;
+        }
+        .sign-in{
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 40px;
+            padding: 5px;
+            width: 90px;
+            font-weight: 500;
+        }
+        .join{
+            background-color: black;
+            border: none;
+            color: white;
+            border-radius: 40px;
+            padding: 5px;
+            width: 90px;
+            font-weight: 500;
+        }
+        .nav-bar1{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0px 10px 119px;
+            background-color: rgb(247, 246, 246);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .main-body{
+            display: flex;
+            gap: 200px;
+            padding: 30px 0px 10px 115px;
+        }
+        .main-body-left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 15px;
+            width: 150px;
+        }
+        .main-body-left p{
+            color: gray;
+        }
+        .text-itself{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .main-body-right{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            padding-top: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .right-title p{
+            color: gray;
+        }
+        .sandwiches img, .wraps img, .egg img, .yogurt img{
+            width: 130px;
+            height: 130px;
+            border: none;
+            border-radius: 80px;
+        }
+        .sandwiches, .wraps, .egg, .yogurt{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            align-items: center;
+        }
+        .footer{
+            display: flex;
+            flex-direction: column;
+            padding: 120px;
+        }
+        .footer1{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            place-content: center;
+            gap: 20px;
+        }
+        .footer1 p{
+            color: gray;
+        }
+        .footer1-text{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer2{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .links{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .burger{
+            display: none;
+        }
+        @media screen and (max-width:450px) {
+            body{
+                display: flex;
+                flex-direction: column;
+            }
+            .main-body{
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: start;
+                text-align: start;
+                font-size: 20px;
+                padding: 20px;
+            }
+            nav,.location, .nav-bar1, .header-right{
+                display: none;
+            }
+            nav.active{
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                height: 100vh;
+                right: 0;
+                top: 0;
+                width: 160px;
+                position: absolute;
+                padding-top: 80px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                z-index: 10;
+            }
+            header{
+                display: flex;
+                align-items: center;
+
+            }
+            .logo{
+                width: 50px;
+            }
+            .burger{
+                display: block;
+                z-index: 30;
+            }
+            .sandwiches, .wraps, .egg, .yogurt{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footer{
+                display: grid;
+                grid-template-columns: 1fr 1fr ;
+                padding: 10px;
+            }
+            .footer1{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                padding: 10px;            
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" width="48px">
+            <nav style="text-transform: uppercase;">
+                <h6>Menu</h6>
+                <h6>Rewards</h6>
+                <h6>Gift cards</h6>
+            </nav>
+        </div>
+        <img class="burger" src="burger.svg">
+        <div class="header-right">
+            <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>
+                <h5>Location</h5>
+            </div>
+            <div class="btns">
+                <button class="sign-in">Sign-in</button>
+                <button class="join">Join now</button>
+            </div>
+        </div>
+    </header>
+    <div class="nav-bar1">
+        <p>Menu</p>
+        <p>Featured</p>
+        <p>Previous</p>
+        <p>Favorites</p>
+    </div>
+    <div class="main-body">
+        <div class="main-body-left">
+            <div class="text-itself">
+                <h3>Drinks</h3>
+                <p>Hot Coffee</p>
+                <p>Cold Coffee</p>
+                <p>Hot Tea</p>
+                <p>Cold Tea</p>
+                <p>Refreshers</p>
+                <p>Frappuccino® Blended Beverage</p>
+                <p>Hot Chocolate, Lemonade & More</p>
+                <p>Bottled Beverages</p>
+            </div>
+            <div class="text-itself">
+                <h3>Food</h3>
+                <p class="breakfast">Breakfast</p>
+                <p class="wraps-text">Wraps</p>
+                <p class="egg-text">Egg Bites & Bakes</p>
+                <p class="yogurt-text">Oatmeal & Yogurt</p>
+                <p class="snacks-text">Snacks</p>
+            </div>
+            <div class="text-itself">
+                <h3>At Home Coffee</h3>
+                <p>Whole Bean</p>
+                <p>VIA® Instant</p>
+                <p>Shopping Bag</p>
+            </div>
+        </div>
+        <div class="main-body-right">
+            <div class="right-title">
+                <p>Menu / <b>Breakfast</b></p>
+                <h2><b>Breakfast</b></h2>
+            </div>
+            <div class="right-options">
+                <div class="first">
+                    <h2><b>Breakfast Sandwiches</b></h2>
+                    <hr>
+                    <div class="sandwiches"></div>
+                </div>
+                <div class="second">
+                    <h2><b>Breakfast Wraps</b></h2>
+                    <hr>
+                    <div class="wraps"></div>
+                </div>
+                <div class="first">
+                    <h2><b>Egg Bites & Bakes</b></h2>
+                    <hr>
+                    <div class="egg"></div>
+                </div>
+                <div class="first">
+                    <h2><b>Oatmeal & Yogurt</b></h2>
+                    <hr>
+                    <div class="yogurt"></div>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="footer">
+        <div class="footer1">
+            <div class="footer1-text">
+                <h3>About Us</h3>
+                <p>Our Company</p>
+                <p>Our Coffee</p>
+                <p>About Starbucks</p>
+                <p>Starbucks Archive</p>
+                <p>Investor Relations</p>
+                <p>Customer Service</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="footer1-text">
+                <h3>Careers</h3>
+                <p>Culture and Values</p>
+                <p>Belonging at Starbucks</p>
+                <p>College Achievement Plan</p>
+                <p>Alumni Community</p>
+                <p>U.S. Careers</p>
+                <p>International Careers</p>
+            </div>
+            <div class="footer1-text">
+                <h3>Social Impact</h3>
+                <p>Communities</p>
+                <p>Starbucks Foundation</p>
+                <p>Sustainability</p>
+                <p>Environmental and Social Impact Reporting</p>
+            </div>
+            <div class="footer1-text">
+                <h3>For Business Partners</h3>
+                <p>Landlord Support Center</p>
+                <p>Suppliers</p>
+                <p>Corporate Gift Card Sales</p>
+                <p>Office and Foodservice Coffee</p>
+            </div>
+            <div class="footer1-text">
+                <h3>Order and Pick Up</h3>
+                <p>Order on the App</p>
+                <p>Order on the Web</p>
+                <p>Delivery</p>
+                <p>Order and Pick Up Options</p>
+                <p>Explore and Find Coffee for Home</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer2">
+            <div class="links">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.669 11.538a.5.5 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686m.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858m.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+                    <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-pinterest" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.286-4.84 2.775 0 4.932 1.977 4.932 4.62 0 2.757-1.739 4.976-4.151 4.976-.811 0-1.573-.421-1.834-.919l-.498 1.902c-.181.695-.669 1.566-.995 2.097A8 8 0 1 0 8 0"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+                    <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.64.64 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.64.64 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76m5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z"/>
+                </svg>
+            </div>
+            <div class="footer2-text">
+                <p>Privacy Notice</p>
+                <p>Consumer Health Privacy Notice</p>
+                <p>Terms of Use</p>
+                <p>Do Not Share My Personal Information</p>
+                <p>CA Supply Chain Act</p>
+                <p>Accessibility</p>
+                <p>Cookie Preferences</p>
+                <p class="font-gray" style="color: gray;">© 2025 Starbucks Coffee Company. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.burger').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active')
+        })
+        const API = "data.json"
+        async function showSandwiches() {
+            const promise = await fetch(API)
+            const response = await promise.json()
+            const sandwiches = response.sandwiches
+            const sandwichesCont = document.querySelector('.sandwiches')
+            for (let i=0; i<sandwiches.length; i++) {
+                console.log(sandwiches[i]);
+                const sandwichesType = document.createElement('div')
+                sandwichesType.innerHTML = `
+                <img src="${sandwiches[i].photo}">
+                <p>${sandwiches[i].name}</p>
+                `;
+                sandwichesType.addEventListener('click', () => {
+                    localStorage.setItem('selectedSand', JSON.stringify(sandwiches[i]));
+                    window.location.href = 'selected.html';
+                });
+                sandwichesCont.appendChild(sandwichesType)
+            }
+        
+           
+        }
+        showSandwiches();
+
+        async function showWraps() {
+            const promise = await fetch(API);
+            const response = await promise.json();
+            const wraps = response.wraps;
+
+            const wrapsCont = document.querySelector('.wraps');
+            for (let i = 0; i < wraps.length; i++) {
+                const wrap = wraps[i];
+                const wrapsType = document.createElement('div');
+                wrapsType.innerHTML = `
+                    <img src="${wrap.photo}" alt="${wrap.name}">
+                    <p>${wrap.name}</p>
+                `;
+                wrapsType.addEventListener('click', () => {
+                    localStorage.setItem('selectedWraps', JSON.stringify(wrap));
+                    window.location.href = 'wraps.html';
+                });
+                wrapsCont.appendChild(wrapsType);
+            }
+        }
+
+        showWraps();
+
+        async function showEggs() {
+            const promise = await fetch(API)
+            const response = await promise.json()
+            const eggs = response.eggs
+            const eggsCont = document.querySelector('.egg')
+
+            for (let i=0; i<eggs.length; i++) {
+                const egg = eggs[i]
+                const eggsType = document.createElement('div')
+                eggsType.innerHTML = `
+                <img src="${egg.photo}">
+                <p>${egg.name}</p>
+                `;
+                eggsType.addEventListener('click', () => {
+                    localStorage.setItem('selectedEggs', JSON.stringify(egg));
+                    window.location.href = 'eggs.html';
+                });
+                eggsCont.appendChild(eggsType)
+            }
+           
+        }
+        showEggs();
+
+        async function showYogurt() {
+            const promise = await fetch(API)
+            const response = await promise.json()
+            const yogurt = response.yogurt
+            const yogurtCont = document.querySelector('.yogurt')
+
+            for (let i=0; i<yogurt.length; i++) {
+                const yogurts = yogurt[i]
+                const yogurtType = document.createElement('div')
+                yogurtType.innerHTML = `
+                <img src="${yogurts.photo}">
+                <p>${yogurts.name}</p>
+                `;
+                yogurtType.addEventListener('click', () => {
+                    localStorage.setItem('selectedYogurt', JSON.stringify(yogurts));
+                    window.location.href = 'yogurt.html';
+                });
+                yogurtCont.appendChild(yogurtType)
+            }
+        }
+        showYogurt();
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
